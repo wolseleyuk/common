@@ -3,7 +3,7 @@ const dts = require("rollup-plugin-dts").default;
 const resolve = require('@rollup/plugin-node-resolve').default;
 const terser = require('@rollup/plugin-terser').default;
 
-const libraryName = "ObRe";
+const libraryName = "Common";
 
 const config = [
     {
@@ -12,7 +12,7 @@ const config = [
             {
                 file: `dist/bundle.js`,
                 format: 'umd',
-                // name: libraryName,
+                name: libraryName,
                 sourcemap: true,
                 globals: {
                     axios: 'axios',
@@ -23,7 +23,7 @@ const config = [
             {
                 file: `dist/bundle.min.js`,
                 format: 'umd',
-                // name: libraryName,
+                name: libraryName,
                 sourcemap: true,
                 plugins: [
                     terser()
