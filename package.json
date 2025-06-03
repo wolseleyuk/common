@@ -1,6 +1,6 @@
 {
     "name": "@wolseley/common",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -9,8 +9,9 @@
     "type": "module",
     "scripts": {
         "_tsc": "tsc",
-        "_make-bundle": "rollup -c --bundleConfigAsCjs",
-        "build": "run-s _test _tsc _make-bundle",
+        "_clean": "rm -r -f dist",
+        "_bundle": "rollup -c --bundleConfigAsCjs",
+        "build": "run-s _test _clean _tsc _bundle",
         "_test": "jest"
     },
     "devDependencies": {
