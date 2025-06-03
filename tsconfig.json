@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "removeComments": false,
+        "sourceMap": true,
+        "target": "es2018", // Or "es5" if you need wider legacy browser support
+        "outDir": "dist", // tsc output dir (used by `dts` plugin or if you run tsc standalone)
+        "declaration": true, // Generates .d.ts files
+        "strict": true,
+        "module": "esnext", // Let Rollup handle final module format
+        "noEmitOnError": true,
+        "lib": [
+            "es2017", // Or "es2015", "dom" if you use DOM APIs
+            "dom" // Add "dom" if you use browser-specific APIs like console, setTimeout etc.
+        ],
+        "esModuleInterop": true, // Set to true for better CJS/ESM interop
+    },
+    "include": [
+        "src"
+    ]
+}
