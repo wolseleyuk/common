@@ -1,6 +1,6 @@
-import { IRestObject } from "../interfaces/rest-object";
-import { AxiosRestResponse } from "./axios-rest-response";
-const Axios = require('axios');
+import { IRestObject } from "../interfaces/rest-object.js";
+import { AxiosRestResponse } from "./axios-rest-response.js";
+import Axios from "axios";
 import { AxiosRequestConfig } from "axios";
 
 export class AxiosObject implements IRestObject {

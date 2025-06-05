@@ -1,5 +1,5 @@
-import { AxiosRestResponse } from "./axios-rest-response";
-const Axios = require('axios');
+import { AxiosRestResponse } from "./axios-rest-response.js";
+import Axios from "axios";
 export class AxiosObject {
     constructor(config) {
         this._config = {};
@@ -30,4 +30,3 @@ export class AxiosObject {
         return `${this._config.baseURL ? this._config.baseURL + ' ' : ''}${this._config.url || ''}`;
     }
 }
-//# sourceMappingURL=axios-object.js.map

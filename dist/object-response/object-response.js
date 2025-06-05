@@ -13,4 +13,3 @@ export class ObjectResponse {
         };
     }
 }
-//# sourceMappingURL=object-response.js.map

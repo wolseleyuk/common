@@ -1,3 +1,2 @@
-export * from './rest-object';
-export * from './rest-response';
-//# sourceMappingURL=index.js.map
+export * from './rest-object.js';
+export * from './rest-response.js';

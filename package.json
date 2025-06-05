@@ -14,6 +14,14 @@
         "build": "run-s _test _clean _tsc _bundle",
         "_test": "jest"
     },
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        },
+        "./package.json": "./package.json"
+    },
     "devDependencies": {
         "@jest/globals": "^30.0.0-beta.3",
         "@rollup/plugin-node-resolve": "^16.0.1",

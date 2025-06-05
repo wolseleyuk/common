@@ -21,4 +21,3 @@ export class ProgressMessage {
         return "Deleting all lines...";
     }
 }
-//# sourceMappingURL=progress-message.js.map

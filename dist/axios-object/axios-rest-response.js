@@ -16,4 +16,3 @@ export class AxiosRestResponse {
         return { ...this };
     }
 }
-//# sourceMappingURL=axios-rest-response.js.map

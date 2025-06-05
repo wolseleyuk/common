@@ -1,1 +1,1 @@
-export * from './object-response';
+export * from './object-response.js';
