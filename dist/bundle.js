@@ -44,6 +44,59 @@
         }
     }
 
+    class AxiosRestResponse {
+        constructor(obj) {
+            this.body = obj.data;
+            this.response = {
+                body: new ReadableStream(obj.data),
+                bodyused: true,
+                ok: obj.statusText === 'OK',
+                redirected: false,
+                status: obj.status,
+                statusText: obj.statusText,
+                type: '',
+                url: obj.config.url
+            };
+        }
+        toObject() {
+            return { ...this };
+        }
+    }
+
+    const Axios = require('axios');
+    class AxiosObject {
+        constructor(config) {
+            this._config = {};
+            Object.assign(this._config, config);
+        }
+        get config() {
+            return this._config;
+        }
+        async fetch() {
+            try {
+                const resp = await Axios.request(this._config);
+                return new AxiosRestResponse(resp).toObject();
+            }
+            catch (error) {
+                console.log(error);
+                return ('Error');
+            }
+        }
+        body(data) {
+            this._config.data = data;
+            return this;
+        }
+        parameters(params) {
+            this._config.params = params;
+            return this;
+        }
+        async toUrl() {
+            return `${this._config.baseURL ? this._config.baseURL + ' ' : ''}${this._config.url || ''}`;
+        }
+    }
+
+    exports.AxiosObject = AxiosObject;
+    exports.AxiosRestResponse = AxiosRestResponse;
     exports.ObjectResponse = ObjectResponse;
     exports.ProgressMessage = ProgressMessage;
 
