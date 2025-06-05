@@ -1,1 +1,1 @@
-export * from './progress-message.js'
+export * from './progress-message'

@@ -1,4 +1,4 @@
-import { IRestResponse } from "../interfaces/rest-response.js";
+import { IRestResponse } from "../interfaces/rest-response";
 import { AxiosResponse } from "axios";
 
 export class AxiosRestResponse implements IRestResponse {

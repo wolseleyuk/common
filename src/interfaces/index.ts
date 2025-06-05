@@ -1,2 +1,2 @@
-export * from './rest-object.js';
-export * from './rest-response.js';
+export * from './rest-object';
+export * from './rest-response';

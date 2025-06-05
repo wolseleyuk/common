@@ -1,5 +1,5 @@
-import { IRestObject } from "../interfaces/rest-object.js";
-import { AxiosRestResponse } from "./axios-rest-response.js";
+import { IRestObject } from "../interfaces/rest-object";
+import { AxiosRestResponse } from "./axios-rest-response";
 import Axios from "axios";
 import { AxiosRequestConfig } from "axios";
 

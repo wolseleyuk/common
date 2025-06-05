@@ -1,2 +1,2 @@
-export * from './axios-object.js';
-export * from './axios-rest-response.js';
+export * from './axios-object';
+export * from './axios-rest-response';

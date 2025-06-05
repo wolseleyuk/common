@@ -1,4 +1,4 @@
-import { IRestObject } from "../interfaces/rest-object.js";
+import { IRestObject } from "../interfaces/rest-object";
 import { AxiosRequestConfig } from "axios";
 export declare class AxiosObject implements IRestObject {
     private _config;
