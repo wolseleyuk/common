@@ -1,6 +1,6 @@
 {
     "name": "@wolseley/common",
-    "version": "0.0.18",
+    "version": "0.0.19",
     "description": "",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",

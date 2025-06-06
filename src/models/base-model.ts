@@ -1,6 +1,6 @@
-import { mergeObjects } from "../utils";
-
 export class BaseModel {
+
+    private required: string[] = [];
 
     public toObject<T extends object>(omitNullUndefined: boolean = false) {
         if (!omitNullUndefined) {
@@ -21,5 +21,15 @@ export class BaseModel {
             }
             return obj;
         }
+    }
+
+    public isValid(): boolean {
+        for (const prop of this.required) {
+            if ((this as any)[prop] === null) {
+                throw new Error(`${this.constructor.name} validation failed: Required field "${prop}" is missing or null/undefined.`);
+            }
+        }
+
+        return true;
     }
 }
