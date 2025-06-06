@@ -26,6 +26,10 @@ export class AxiosObject implements IRestObject {
         }
     }
 
+    public get(endpointId: string): this {
+        return this;
+    }
+
     public body(data: Object): this {
         this._config.data = data;
         return this;
