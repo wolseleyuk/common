@@ -1,5 +1,6 @@
+import { TObjectResponse } from '../object-response';
 export declare class BaseModel {
-    private required;
-    toObject<T extends object>(omitNullUndefined?: boolean): this | Partial<T>;
-    isValid(): boolean;
+    protected _required: string[];
+    toObject<T extends object>(omitNullUndefined?: boolean): Partial<T>;
+    isValid(): TObjectResponse;
 }

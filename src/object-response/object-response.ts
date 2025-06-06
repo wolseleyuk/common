@@ -1,26 +1,15 @@
 export class ObjectResponse {
 
-    ok: boolean;
-    message: string;
-
     static get success(): TObjectResponse {
-        return new ObjectResponse({ ok: true, message: "Completed successfully" }).toObject();
+        return { ok: true, message: "Completed successfully" };
     }
 
-    constructor(obj: TObjectResponse) {
-        this.ok = obj.ok;
-        this.message = obj.message;
-    }
-
-    public toObject(): TObjectResponse {
-        return {
-            ok: this.ok,
-            message: this.message
-        };
+    static failure(message: string): TObjectResponse {
+        return { ok: false, message: message};
     }
 }
 
-type TObjectResponse = {
+export type TObjectResponse = {
     ok: boolean;
     message: string;
 };

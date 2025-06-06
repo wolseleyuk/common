@@ -4,3 +4,4 @@ export * from './interfaces/index';
 export * from './axios-object/index';
 export * from './utils/index';
 export * from './models/index';
+export * from './errors/index';

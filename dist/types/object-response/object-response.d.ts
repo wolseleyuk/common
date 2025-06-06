@@ -1,12 +1,8 @@
 export declare class ObjectResponse {
-    ok: boolean;
-    message: string;
     static get success(): TObjectResponse;
-    constructor(obj: TObjectResponse);
-    toObject(): TObjectResponse;
+    static failure(message: string): TObjectResponse;
 }
-type TObjectResponse = {
+export type TObjectResponse = {
     ok: boolean;
     message: string;
 };
-export {};

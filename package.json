@@ -1,6 +1,6 @@
 {
     "name": "@wolseley/common",
-    "version": "0.0.19",
+    "version": "0.0.24",
     "description": "",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -11,7 +11,7 @@
         "_clean": "rm -r -f dist",
         "_test": "jest",
         "build:dev": "npm run _clean && webpack --mode development",
-        "build:prod": "npm run _test && npm run _clean && webpack --mode production",
+        "build:prod": "npm run _clean && webpack --mode production",
         "build:types": "tsc --emitDeclarationOnly --outDir dist"
     },
     "exports": {

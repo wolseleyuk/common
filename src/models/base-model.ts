@@ -1,14 +1,23 @@
+import { ApplicationError } from '../errors';
+import { ObjectResponse, TObjectResponse } from '../object-response';
+
 export class BaseModel {
 
-    private required: string[] = [];
+    protected _required: string[] = [];
 
     public toObject<T extends object>(omitNullUndefined: boolean = false) {
         if (!omitNullUndefined) {
-            return { ...this };
+            const obj: Partial<T> = {};
+            for (const key in this) {
+                if (Object.hasOwnProperty.call(this, key) && key !== '_required') {
+                    (obj as any)[key] = this[key];
+                }
+            }
+            return obj;
         } else {
             const obj: Partial<T> = {};
             for (const key in this) {
-                if (Object.hasOwnProperty.call(this, key)) {
+                if (Object.hasOwnProperty.call(this, key) && key !== '_required') {
                     const value = this[key];
                     if (value === null || value === undefined) {
                         continue;
@@ -23,13 +32,13 @@ export class BaseModel {
         }
     }
 
-    public isValid(): boolean {
-        for (const prop of this.required) {
+    public isValid(): TObjectResponse {
+        for (const prop of this._required) {
             if ((this as any)[prop] === null) {
-                throw new Error(`${this.constructor.name} validation failed: Required field "${prop}" is missing or null/undefined.`);
+                return ObjectResponse.failure(`${this.constructor.name} validation failed: Required field "${prop}" is missing or null/undefined.`);
             }
         }
 
-        return true;
+        return ObjectResponse.success;
     }
 }
